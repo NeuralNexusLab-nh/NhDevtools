@@ -17,7 +17,7 @@ app.all('/dev', (req, res) => {
     const e = err;
   }
   res.send(e);
-};
+});
 
 app.all('/cookie', (req, res) => {
   res.send(req.cookies)
