@@ -22,7 +22,7 @@ app.all('/dev', (req, res) => {
 });
 
 app.all('/cookie', (req, res) => {
-  res.send(req.cookies)ㄤ
+  res.send(req.cookies);
 });
 
 app.listen(process.env.PORT);
