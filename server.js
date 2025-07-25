@@ -5,7 +5,10 @@ const app = express();
 
 app.use(express.json());
 app.use(cookie());
-app.use(cors());
+app.use(cors({
+  origin: req.headers["referer"],        // 指定來源，不可用 '*'
+  credentials: true                     // 允許攜帶 cookie
+}));
 
 app.all('/', (req, res) => {
   res.send("NhDev");
