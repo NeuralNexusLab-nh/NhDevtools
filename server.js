@@ -1,12 +1,14 @@
 const express = require("express");
 const cookie = require("cookie-parser");
+const cors = require('cors');
 const app = express();
 
 app.use(express.json());
 app.use(cookie());
+app.use(cors());
 
 app.all('/', (req, res) => {
-  res.send("NhDev Online Now");
+  res.send("NhDev);
 });
 
 app.all('/dev', (req, res) => {
@@ -20,7 +22,7 @@ app.all('/dev', (req, res) => {
 });
 
 app.all('/cookie', (req, res) => {
-  res.send(req.cookies)
+  res.send(req.cookies)ㄤ
 });
 
 app.listen(process.env.PORT);
