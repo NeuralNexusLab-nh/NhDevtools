@@ -8,7 +8,7 @@ app.use(cookie());
 app.use(cors());
 
 app.all('/', (req, res) => {
-  res.send("NhDev);
+  res.send("NhDev");
 });
 
 app.all('/dev', (req, res) => {
