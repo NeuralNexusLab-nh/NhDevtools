@@ -2,11 +2,16 @@ const express = require("express");
 const cookie = require("cookie-parser");
 const cors = require('cors');
 const app = express();
+var referer;
 
+app.use((req, res, next) => {
+  referer = req.headers["referer"];
+  next();
+});
 app.use(express.json());
 app.use(cookie());
 app.use(cors({
-  origin: req.headers["referer"],        // 指定來源，不可用 '*'
+  origin: referer,        // 指定來源，不可用 '*'
   credentials: true                     // 允許攜帶 cookie
 }));
 
